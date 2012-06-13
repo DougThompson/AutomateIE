@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<testplan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="WebTest.xsd">
+	<open url="http://cockeyed.com/citizen/poker/lottery_simulator100.php"/>
+	<wait/>
+	<setCheckBox id="guess[]" value="1" index="2"/>
+	<setCheckBox id="guess[]" value="1" index="9"/>
+	<setCheckBox id="guess[]" value="1" index="14"/>
+	<setCheckBox id="guess[]" value="1" index="19"/>
+	<setCheckBox id="guess[]" value="1" index="35"/>
+	<setSelectValue id="megadrop" value="36"/>
+	<setSelectValue id="select" value="1040"/>
+	<clickButton id="Submit" />
+</testplan>

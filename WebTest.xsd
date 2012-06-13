@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="testplan" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="testplan">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="sleep">
+					<xs:complexType>
+						<xs:attribute name="timeOut">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="close">
+					<xs:complexType>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="attach">
+					<xs:complexType>
+						<xs:attribute name="pageName" type="xs:string" />
+						<xs:attribute name="pageTitle" type="xs:string" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="open">
+					<xs:complexType>
+						<xs:attribute name="url" type="xs:string" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="wait">
+					<xs:complexType>
+						<xs:attribute name="timeOut">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="waitFor">
+					<xs:complexType>
+						<xs:attribute name="pageName" type="xs:string" />
+						<xs:attribute name="timeOut">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+
+				<xs:element name="getPageTitle" type="xs:string">
+				</xs:element>
+				<xs:element name="getElementInnerText">
+					<xs:complexType>
+						<xs:attribute name="inFrameNumber">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="id" type="xs:string" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="getElementValue">
+					<xs:complexType>
+						<xs:attribute name="inFrameNumber">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="id" type="xs:string" />
+					</xs:complexType>
+				</xs:element>
+
+				<xs:element name="clickButton">
+					<xs:complexType>
+						<xs:attribute name="inFrameNumber">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="id" type="xs:string" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="setTextBoxText">
+					<xs:complexType>
+						<xs:attribute name="inFrameNumber">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="id" type="xs:string" />
+						<xs:attribute name="value" type="xs:string" />
+						<xs:attribute name="append" type="xs:boolean" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="setTextAreaText">
+					<xs:complexType>
+						<xs:attribute name="inFrameNumber">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="id" type="xs:string" />
+						<xs:attribute name="value" type="xs:string" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="verifyText">
+					<xs:complexType>
+						<xs:attribute name="inFrameNumber">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="value" type="xs:string" />
+						<xs:attribute name="caseSensitive" type="xs:string" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="setSelectValue">
+					<xs:complexType>
+						<xs:attribute name="inFrameNumber">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="id" type="xs:string" />
+						<xs:attribute name="value" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="clickNamedLink">
+					<xs:complexType>
+						<xs:attribute name="inFrameNumber">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="id" type="xs:string" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="clickTextLink">
+					<xs:complexType>
+						<xs:attribute name="inFrameNumber">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="value" type="xs:string" />
+						<xs:attribute name="caseSensitive" type="xs:string" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="clickLinkInTD">
+					<xs:complexType>
+						<xs:attribute name="inFrameNumber">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="tableId" type="xs:string" />
+						<xs:attribute name="contents" type="xs:string" />
+						<xs:attribute name="startsWith" type="xs:string" />
+						<xs:attribute name="index">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+									<xs:minInclusive value="0"/>
+									<xs:maxInclusive value="999"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="offset">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+									<xs:minInclusive value="-999"/>
+									<xs:maxInclusive value="999"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="position">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+									<xs:minInclusive value="-999"/>
+									<xs:maxInclusive value="999"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="setCheckBox">
+					<xs:complexType>
+						<xs:attribute name="inFrameNumber">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="index">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="id" type="xs:string" />
+						<xs:attribute name="value">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value=""/>
+									<xs:enumeration value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="setCheckBoxInTD">
+					<xs:complexType>
+						<xs:attribute name="inFrameNumber">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="tableId" type="xs:string" />
+						<xs:attribute name="contents" type="xs:string" />
+						<xs:attribute name="startsWith" type="xs:string" />
+						<xs:attribute name="index">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+									<xs:minInclusive value="0"/>
+									<xs:maxInclusive value="999"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="offset">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+									<xs:minInclusive value="-999"/>
+									<xs:maxInclusive value="999"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="position">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+									<xs:minInclusive value="-999"/>
+									<xs:maxInclusive value="999"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="value">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value=""/>
+									<xs:enumeration value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="setRadioButton">
+					<xs:complexType>
+						<xs:attribute name="inFrameNumber">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="id" type="xs:string" />
+						<xs:attribute name="value">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value=""/>
+									<xs:enumeration value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="setRadioButtonInTD">
+					<xs:complexType>
+						<xs:attribute name="inFrameNumber">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="tableId" type="xs:string" />
+						<xs:attribute name="contents" type="xs:string" />
+						<xs:attribute name="startsWith" type="xs:string" />
+						<xs:attribute name="index">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+									<xs:minInclusive value="0"/>
+									<xs:maxInclusive value="999"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="offset">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+									<xs:minInclusive value="-999"/>
+									<xs:maxInclusive value="999"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="position">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+									<xs:minInclusive value="-999"/>
+									<xs:maxInclusive value="999"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="value">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value=""/>
+									<xs:enumeration value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
